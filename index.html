@@ -1,20 +1,96 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description" content="My Wedding Site"/>
+        <meta charset="utf-8"/>
+        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <meta content="My Wedding Site" name="description"/>
         <title>
             Kabby
         </title>
         <!-- <link rel="icon" sizes="192x192" href="images/logo.ico"> -->
-        <link rel="stylesheet" type="text/css" href="styles/normalize.css"/>
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
-        <link rel="stylesheet" type="text/css" href="styles/style.css"/>
+        <link href="styles/normalize.css" rel="stylesheet" type="text/css"/>
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
+        <link href="styles/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <h1>sadf</h1>
-        <script type="text/javascript" src="scripts/script.js"></script>
-    </body> 
+        <div class="container">
+            <div class="splitlayout" id="splitlayout">
+                <div class="intro">
+                    <div class="side side-left">
+                        <div class="intro-content">
+                            <div class="profile">
+                                <img alt="groom" src="images/groom.png"/>
+                            </div>
+                            <h1>
+                                <span>
+                                    Kyle Uhan
+                                </span>
+                                <span>
+                                    Groom
+                                </span>
+                            </h1>
+                        </div>
+                        <div class="overlay">
+                        </div>
+                    </div>
+                    <div class="side side-right">
+                        <div class="intro-content">
+                            <div class="profile">
+                                <img alt="bride" src="images/bride.png"/>
+                            </div>
+                            <h1>
+                                <span>
+                                    Abigail Sutton
+                                </span>
+                                <span>
+                                    Bride
+                                </span>
+                            </h1>
+                        </div>
+                        <div class="overlay">
+                        </div>
+                    </div>
+                </div>
+                <!-- /intro -->
+                <div class="page page-right page-large">
+                    <div class="page-inner">
+                        <section>
+                            <h2>How we met...</h2>
+                            <p>The way I see it....</p>
+                            <p>Blah Blah</p>
+                        </section>
+                        <section>
+                            <h2>Other thing</h2>
+                            <p>Some more stuff...</p>
+                        </section>
+                        <!-- ... -->
+                    </div>
+                    <!-- /page-inner -->
+                </div>
+                <!-- /page-right -->
+                <div class="page page-left page-fill">
+                    <div class="page-inner">
+                        <!-- ... -->
+                    </div>
+                    <!-- /page-inner -->
+                </div>
+                <!-- /page-left -->
+                <a class="back back-right" href="#" title="back to intro">
+                    →
+                </a>
+                <a class="back back-left" href="#" title="back to intro">
+                    ←
+                </a>
+            </div>
+            <!-- /splitlayout -->
+        </div>
+        <!-- /container -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript">
+        </script>
+        <script src="scripts/classie.js" type="text/javascript">
+        </script>
+        <script src="scripts/script.js" type="text/javascript">
+        </script>
+    </body>
 </html>
