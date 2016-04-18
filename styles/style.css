@@ -327,7 +327,7 @@ light pink:   rgb(247,223,199)  #f7dfc7;
     z-index: 500;
     display: block;
     visibility: hidden;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
     color: #47a3da;
     text-align: center;
     font-size: 22px;
@@ -337,7 +337,7 @@ light pink:   rgb(247,223,199)  #f7dfc7;
     /*width: 50px;
     height: 50px;*/
     height: 100%;
-    width: 26%;
+    width: 15%;
 }
 
 .mobile-layout .back {
