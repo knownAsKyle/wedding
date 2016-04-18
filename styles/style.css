@@ -11,6 +11,7 @@ olive:         rgb(213,213,205)  #d5d5cd;
 
 */
 
+
 /* General Blueprint Style */
 
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
@@ -74,9 +75,6 @@ a:hover {
     transition: opacity 0.3s;
 }
 
-
-
-
 .mainPageHeader a {
     font-size: 2.125em;
     line-height: 1.3;
@@ -84,17 +82,14 @@ a:hover {
     font-weight: 400;
 }
 
-.mainPageHeader .mainPageHeader-right a{
-    
-}
+.mainPageHeader .mainPageHeader-right a {}
 
 .mainPageHeader nav {
-    float:left;
+    float: left;
 }
 
-.mainPageHeader-right nav{
+.mainPageHeader-right nav {
     float: right;
-   
 }
 
 .mainPageHeader nav a {
@@ -102,12 +97,12 @@ a:hover {
     transition: .2s color;
 }
 
-.mainPageHeader-right nav a{
+.mainPageHeader-right nav a {
     color: #47a3da;
-    color: rgb(51,18,39);
+    color: rgb(51, 18, 39);
 }
 
-.mainPageHeader-right nav a:hover{
+.mainPageHeader-right nav a:hover {
     color: #000;
 }
 
@@ -133,6 +128,7 @@ a:hover {
     text-indent: 0;
 }
 
+
 /*.mainPageHeader nav a:hover:after {
     color: #47a3da;
 }*/
@@ -157,7 +153,6 @@ a:hover {
     content: "\e004";
 }
 
-
 @media screen and (max-width: 73.375em) {
     .mainPageHeader {
         text-align: center;
@@ -177,7 +172,7 @@ a:hover {
 
 @media screen and (max-height: 30.25em) {
     .mainPageHeader nav {
-       /* display: none;*/
+        /* display: none;*/
     }
 }
 
@@ -235,6 +230,7 @@ body {
     background: rgba(0, 0, 0, 0.3);
 }
 
+
 /*
 Dark purple:  rgb(51,18,39)  #331227;
 green:        rgb(124,151,144)  #7c9790;
@@ -246,10 +242,10 @@ light pink:   rgb(247,223,199)  #f7dfc7;
 .side-left {
     left: 0;
     background: #47a3da;
-    background: rgb(124,151,144);
+    background: rgb(124, 151, 144);
     color: #fff;
     outline: 1px solid #47a3da;
-    outline: 1px solid rgb(124,151,144);
+    outline: 1px solid rgb(124, 151, 144);
     /* avoid gap */
 }
 
@@ -257,8 +253,8 @@ light pink:   rgb(247,223,199)  #f7dfc7;
     right: 0;
     background: #fff;
     color: #47a3da;
-    color: rgb(124,151,144);
-    outline: 1px solid rgb(124,151,144);
+    color: rgb(124, 151, 144);
+    outline: 1px solid rgb(124, 151, 144);
     /* avoid gap */
 }
 
@@ -282,8 +278,7 @@ light pink:   rgb(247,223,199)  #f7dfc7;
     height: 140px;
     border-radius: 50%;
     background: #47a3da;
-    background: rgb(247,223,199);
-
+    background: rgb(247, 223, 199);
 }
 
 .profile img {
@@ -397,15 +392,15 @@ light pink:   rgb(247,223,199)  #f7dfc7;
     transform: translateX(100%);
 }
 
-.page-right img{
+.page-right img {
     width: 90%;
     max-width: 800px;
     border-radius: 2px;
     box-shadow: 0 0 40px cornsilk;
-    opacity:.9;
+    opacity: .9;
 }
 
-.page-right .theProposal{
+.page-right .theProposal {
     max-height: 500px;
 }
 
@@ -420,13 +415,25 @@ light pink:   rgb(247,223,199)  #f7dfc7;
     transform: translateX(-100%);
 }
 
-.page-left img{
+.page-left img {
     height: 200px;
 }
- 
-.page-left #innerPictureGroom{
+.innerPictureGroomWrapper{
+    position: relative;
+    height: 200px;
+}
+
+.page-left .innerPictureGroom {
+    position: absolute;
+    right: 0;
+    opacity: 0;
     transition: all .2s;
 }
+
+.page-left .showPicture{
+    opacity: 1;
+}
+
 
 /* Inner page content */
 
@@ -659,5 +666,125 @@ light pink:   rgb(247,223,199)  #f7dfc7;
 @media screen and (max-width: 320px) {
     body {
         font-size: 70%;
+    }
+}
+
+
+/*SlideOut Menu*/
+
+#showRight {
+    position: fixed;
+    z-index: 9999;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.main-page-header {
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    padding: 1.4em;
+    opacity: 0.7;
+    visibility: visible;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}
+#main-page-header-display{
+    float: right;
+    font-family: 'Poiret One', cursive;
+}
+
+.close-menu-button{
+    float:right;
+}
+
+.cbp-spmenu {
+    background: #47a3da;
+    position: fixed;
+}
+
+.cbp-spmenu h3 {
+    color: #afdefa;
+    font-size: 1.9em;
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+    background: #0d77b6;
+}
+
+.cbp-spmenu a {
+    display: block;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+.cbp-spmenu a:hover {
+    background: #258ecd;
+}
+
+.cbp-spmenu a:active {
+    background: #afdefa;
+    color: #47a3da;
+}
+
+
+/* Orientation-dependent styles for the content of the menu */
+
+.cbp-spmenu-vertical {
+    width: 240px;
+    height: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.cbp-spmenu-vertical a {
+    border-bottom: 1px solid #258ecd;
+    padding: 1em;
+}
+
+
+/* Vertical menu that slides from the left or right */
+
+.cbp-spmenu-right {
+    right: -240px;
+}
+
+.cbp-spmenu-right.cbp-spmenu-open {
+    right: 0px;
+}
+
+
+/* Transitions */
+
+.cbp-spmenu, .cbp-spmenu-push {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+
+/* Example media queries */
+
+@media screen and (max-width: 55.1875em) {
+    .cbp-spmenu-top {
+        top: -110px;
+    }
+    .cbp-spmenu-bottom {
+        bottom: -110px;
+    }
+}
+
+@media screen and (max-height: 26.375em) {
+    .cbp-spmenu-vertical {
+        font-size: 90%;
+        width: 190px;
+    }
+    .cbp-spmenu-right {
+        right: -190px;
+    }
+    .cbp-spmenu-push-toright {
+        left: 190px;
     }
 }

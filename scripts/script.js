@@ -23,6 +23,8 @@
         rightSide = splitlayout.querySelector('div.intro > div.side-right'),
         pageLeft = splitlayout.querySelector('div.page-left'),
         pageRight = splitlayout.querySelector('div.page-right'),
+        menuRight = document.getElementById('cbp-spmenu-s2'),
+        closeMenu = document.getElementById('close-menu-button'),
         eventtype = mobilecheck() ? 'touchstart' : 'click',
         transEndEventNames = {
             'WebkitTransition': 'webkitTransitionEnd',
@@ -45,6 +47,9 @@
         rightSide.querySelector('div.intro-content').addEventListener(eventtype, function(ev) {
             reset();
             classie.add(splitlayout, 'open-right');
+        });
+        closeMenu.addEventListener(eventtype,function(){
+            reset();
         });
         // back to intro
         // after transition ends:
@@ -70,18 +75,35 @@
         classie.remove(splitlayout, 'close-right');
         classie.remove(splitlayout, 'close-left');
         classie.remove(splitlayout, 'reset-layout');
+        classie.remove(menuRight,'cbp-spmenu-open');
     }
     init();
 })();
-
-(function() {
-    
-    var count = 1;
+(function rotatingImage() {
+    var count = 0;
+    var imgtarget = document.getElementsByClassName("innerPictureGroom");
     var animate = setInterval(function() {
-        var imgtarget = document.getElementById("innerPictureGroom");
-        console.log(imgtarget)
-        imgtarget.src = "images/silo_" + count + ".png";
+        for(var i = 0, len = imgtarget.length; i < len; i++){
+            classie.remove(imgtarget[i],"showPicture")
+        }
+        classie.add(imgtarget[count],"showPicture")
         count++;
-        count = count > 5 ? 1 : count;
-    }, 1000)
+        count = count > 4 ? 0 : count;
+    }, 2000);
+})();
+(function menuControl() {
+    var menuRight = document.getElementById('cbp-spmenu-s2'),
+        showRight = document.getElementById('showRight');
+    showRight.onclick = function() {
+        classie.toggle(this, 'active');
+        classie.toggle(menuRight, 'cbp-spmenu-open');
+    };
+})();
+(function countDownTimer(){
+    var cd = document.getElementById("main-page-header-display");
+    var timer = countdown( new Date(2016, 10, 1), updateTimer, countdown.MONTHS | countdown.DAYS);
+
+    function updateTimer(ts){
+        cd.innerText =ts.months + " months, "  + ts.days + " days until we are Mr. & Mrs.";
+    }
 })();
