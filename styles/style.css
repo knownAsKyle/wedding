@@ -327,7 +327,7 @@ light pink:   rgb(247,223,199)  #f7dfc7;
     z-index: 500;
     display: block;
     visibility: hidden;
-    /*border-radius: 50%;*/
+    border-radius: 50%;
     color: #47a3da;
     text-align: center;
     font-size: 22px;
@@ -336,7 +336,7 @@ light pink:   rgb(247,223,199)  #f7dfc7;
     pointer-events: none;
     /*width: 50px;
     height: 50px;*/
-    height: 100%;
+    height: 800px;
     width: 15%;
 }
 

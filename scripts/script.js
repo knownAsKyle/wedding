@@ -85,14 +85,17 @@
 (function rotatingImage() {
     var count = 0;
     var imgtarget = document.getElementsByClassName("innerPictureGroom");
-    var animate = setInterval(function() {
+    setTimeout(roateImage, 2000);
+
+    function roateImage(){
         for(var i = 0, len = imgtarget.length; i < len; i++){
             classie.remove(imgtarget[i],"showPicture")
         }
         classie.add(imgtarget[count],"showPicture")
         count++;
         count = count > 4 ? 0 : count;
-    }, 2000);
+        setTimeout(roateImage, 2000);
+    }
 })();
 (function menuControl() {
     var menuRight = document.getElementById('cbp-spmenu-s2'),
