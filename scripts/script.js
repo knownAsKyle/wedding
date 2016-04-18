@@ -25,6 +25,7 @@
         pageRight = splitlayout.querySelector('div.page-right'),
         menuRight = document.getElementById('cbp-spmenu-s2'),
         closeMenu = document.getElementById('close-menu-button'),
+        displayHeader = document.getElementById("main-page-header-display"),
         eventtype = mobilecheck() ? 'touchstart' : 'click',
         transEndEventNames = {
             'WebkitTransition': 'webkitTransitionEnd',
@@ -43,6 +44,7 @@
         leftSide.querySelector('div.intro-content').addEventListener(eventtype, function(ev) {
             reset();
             classie.add(splitlayout, 'open-left');
+            classie.add(displayHeader,"hide-display");
         });
         rightSide.querySelector('div.intro-content').addEventListener(eventtype, function(ev) {
             reset();
@@ -76,6 +78,7 @@
         classie.remove(splitlayout, 'close-left');
         classie.remove(splitlayout, 'reset-layout');
         classie.remove(menuRight,'cbp-spmenu-open');
+        classie.remove(displayHeader,"hide-display");
     }
     init();
 })();

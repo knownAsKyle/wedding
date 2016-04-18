@@ -327,8 +327,6 @@ light pink:   rgb(247,223,199)  #f7dfc7;
     z-index: 500;
     display: block;
     visibility: hidden;
-    width: 50px;
-    height: 50px;
     border-radius: 50%;
     color: #47a3da;
     text-align: center;
@@ -336,6 +334,10 @@ light pink:   rgb(247,223,199)  #f7dfc7;
     line-height: 44px;
     opacity: 0;
     pointer-events: none;
+    /*width: 50px;
+    height: 50px;*/
+    height: 100%;
+    width: 26%;
 }
 
 .mobile-layout .back {
@@ -418,7 +420,8 @@ light pink:   rgb(247,223,199)  #f7dfc7;
 .page-left img {
     height: 200px;
 }
-.innerPictureGroomWrapper{
+
+.innerPictureGroomWrapper {
     position: relative;
     height: 200px;
 }
@@ -430,7 +433,7 @@ light pink:   rgb(247,223,199)  #f7dfc7;
     transition: all .2s;
 }
 
-.page-left .showPicture{
+.page-left .showPicture {
     opacity: 1;
 }
 
@@ -678,6 +681,7 @@ light pink:   rgb(247,223,199)  #f7dfc7;
     top: 10px;
     left: 10px;
     cursor: pointer;
+    color: #ccc;
 }
 
 .main-page-header {
@@ -690,13 +694,18 @@ light pink:   rgb(247,223,199)  #f7dfc7;
     -webkit-transition: opacity 0.3s;
     transition: opacity 0.3s;
 }
-#main-page-header-display{
+
+#main-page-header-display {
     float: right;
     font-family: 'Poiret One', cursive;
 }
 
-.close-menu-button{
-    float:right;
+.hide-display {
+    opacity: 0;
+}
+
+.close-menu-button {
+    float: right;
 }
 
 .cbp-spmenu {
