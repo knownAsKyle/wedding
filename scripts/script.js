@@ -73,3 +73,15 @@
     }
     init();
 })();
+
+(function() {
+    
+    var count = 1;
+    var animate = setInterval(function() {
+        var imgtarget = document.getElementById("innerPictureGroom");
+        console.log(imgtarget)
+        imgtarget.src = "images/silo_" + count + ".png";
+        count++;
+        count = count > 5 ? 1 : count;
+    }, 1000)
+})();
