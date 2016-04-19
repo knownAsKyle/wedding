@@ -237,6 +237,7 @@ green:        rgb(124,151,144)  #7c9790;
 peach:        rgb(204,161,145)  #cca191;
 yellow:       rgb(232,215,208)  #e8d7d0
 light pink:   rgb(247,223,199)  #f7dfc7;
+other pink:                     #FCE4EC;
 bludh pink    #FFEBEE;
 */
 
@@ -244,7 +245,7 @@ bludh pink    #FFEBEE;
     left: 0;
     background: #47a3da;
     background: rgb(124, 151, 144);
-    background: #FCE4EC;
+    
     color: #fff;
     outline: 1px solid #47a3da;
     outline: 1px solid rgb(124, 151, 144);
@@ -254,6 +255,7 @@ bludh pink    #FFEBEE;
 .side-right {
     right: 0;
     background: #fff;
+    background: #FCE4EC;
     color: #47a3da;
     color: rgb(124, 151, 144);
     outline: 1px solid rgb(124, 151, 144);

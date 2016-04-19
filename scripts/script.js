@@ -67,6 +67,7 @@
                     page = dir === 'right' ? pageRight : pageLeft;
                 classie.remove(splitlayout, 'open-' + dir);
                 classie.add(splitlayout, 'close-' + dir);
+                classie.remove(displayHeader,"hide-display");
                 page.addEventListener(transEndEventName, onEndTransFn);
             };
         splitlayout.querySelector('a.back-left').addEventListener(eventtype, backToIntro);
