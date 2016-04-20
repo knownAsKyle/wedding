@@ -286,7 +286,7 @@ bludh pink    #FFEBEE;
 }
 
 .profile img {
-    max-width: 100%;
+    width: 100%;
     border-radius: 50%;
     opacity: 0.6;
     height: 100%;
@@ -322,7 +322,8 @@ bludh pink    #FFEBEE;
 }
 
 .side-right .intro-content h1 > span:nth-child(2):before {
-    background: #47a3da;
+/*    background: #47a3da;*/
+    background-color: rgb(124, 151, 144);
 }
 
 .back {
