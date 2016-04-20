@@ -711,6 +711,7 @@ bludh pink    #FFEBEE;
 
 .close-menu-button {
     float: right;
+    cursor: pointer;
 }
 
 .cbp-spmenu {
@@ -727,7 +728,7 @@ bludh pink    #FFEBEE;
     background: #0d77b6;
 }
 
-.cbp-spmenu a {
+.cbp-spmenu a, .cbp-spmenu .registery-area {
     display: block;
     color: #fff;
     font-size: 1.1em;
@@ -753,9 +754,14 @@ bludh pink    #FFEBEE;
     z-index: 1000;
 }
 
-.cbp-spmenu-vertical a {
+.cbp-spmenu-vertical a, .cbp-spmenu-vertical .registery-area {
     border-bottom: 1px solid #258ecd;
     padding: 1em;
+}
+
+.cbp-spmenu img{
+    max-width: 100%;
+    max-height: 80px;
 }
 
 
@@ -777,9 +783,6 @@ bludh pink    #FFEBEE;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-
-
-/* Example media queries */
 
 @media screen and (max-width: 55.1875em) {
     .cbp-spmenu-top {
