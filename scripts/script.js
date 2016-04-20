@@ -44,13 +44,13 @@
         leftSide.querySelector('div.intro-content').addEventListener(eventtype, function(ev) {
             reset();
             classie.add(splitlayout, 'open-left');
-            classie.add(displayHeader,"hide-display");
+            classie.add(displayHeader, "hide-display");
         });
         rightSide.querySelector('div.intro-content').addEventListener(eventtype, function(ev) {
             reset();
             classie.add(splitlayout, 'open-right');
         });
-        closeMenu.addEventListener(eventtype,function(){
+        closeMenu.addEventListener(eventtype, function() {
             reset();
         });
         // back to intro
@@ -67,7 +67,7 @@
                     page = dir === 'right' ? pageRight : pageLeft;
                 classie.remove(splitlayout, 'open-' + dir);
                 classie.add(splitlayout, 'close-' + dir);
-                classie.remove(displayHeader,"hide-display");
+                classie.remove(displayHeader, "hide-display");
                 page.addEventListener(transEndEventName, onEndTransFn);
             };
         splitlayout.querySelector('a.back-left').addEventListener(eventtype, backToIntro);
@@ -78,8 +78,8 @@
         classie.remove(splitlayout, 'close-right');
         classie.remove(splitlayout, 'close-left');
         classie.remove(splitlayout, 'reset-layout');
-        classie.remove(menuRight,'cbp-spmenu-open');
-        classie.remove(displayHeader,"hide-display");
+        classie.remove(menuRight, 'cbp-spmenu-open');
+        classie.remove(displayHeader, "hide-display");
     }
     init();
 })();
@@ -88,11 +88,11 @@
     var imgtarget = document.getElementsByClassName("innerPictureGroom");
     setTimeout(roateImage, 2000);
 
-    function roateImage(){
-        for(var i = 0, len = imgtarget.length; i < len; i++){
-            classie.remove(imgtarget[i],"showPicture")
+    function roateImage() {
+        for (var i = 0, len = imgtarget.length; i < len; i++) {
+            classie.remove(imgtarget[i], "showPicture");
         }
-        classie.add(imgtarget[count],"showPicture")
+        classie.add(imgtarget[count], "showPicture");
         count++;
         count = count > 4 ? 0 : count;
         setTimeout(roateImage, 2000);
@@ -100,17 +100,27 @@
 })();
 (function menuControl() {
     var menuRight = document.getElementById('cbp-spmenu-s2'),
-        showRight = document.getElementById('showRight');
-    showRight.onclick = function() {
+        showRight = document.getElementById('showRight'),
+        footerRight = document.getElementById('page-footer-right');
+    footerLeft = document.getElementById('page-footer-left');
+    showRight.addEventListener("click", handleMenuViewOperation);
+    footerLeft.addEventListener("click", handleMenuViewOperation);
+    footerRight.addEventListener("click", handleMenuViewOperation);
+
+    function handleMenuViewOperation() {
         classie.toggle(this, 'active');
         classie.toggle(menuRight, 'cbp-spmenu-open');
-    };
-})();
-(function countDownTimer(){
-    var cd = document.getElementById("main-page-header-display");
-    var timer = countdown( new Date(2016, 10, 1), updateTimer, countdown.MONTHS | countdown.DAYS);
+    }
 
-    function updateTimer(ts){
-        cd.innerText =ts.months + " months, "  + ts.days + " days until we are Mr. & Mrs.";
+    function openMenu() {
+        classie.add(menuRight, 'cbp-spmenu-open');
+    }
+})();
+(function countDownTimer() {
+    var cd = document.getElementById("main-page-header-display");
+    var timer = countdown(new Date(2016, 10, 1), updateTimer, countdown.MONTHS | countdown.DAYS);
+
+    function updateTimer(ts) {
+        cd.innerText = ts.months + " months, " + ts.days + " days until we are Mr. & Mrs.";
     }
 })();
