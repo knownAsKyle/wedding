@@ -391,9 +391,8 @@ bludh pink    #FFEBEE;
 .page-right {
     left: 25%;
     outline: 5px solid #ecf0f1;
-    /* avoid rounding gaps */
-    background: #ecf0f1;
-    color: #97a8b2;
+    background: #D7CCC8;
+    color: whitesmoke;
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
 }
@@ -705,6 +704,8 @@ bludh pink    #FFEBEE;
     left: 10px;
     cursor: pointer;
     color: #ccc;
+    padding: 15px 0 0 15px;
+    font-size: 1.2em;
 }
 
 .main-page-header {
@@ -721,6 +722,7 @@ bludh pink    #FFEBEE;
 #main-page-header-display {
     float: right;
     font-family: 'Poiret One', cursive;
+    margin-top: 60px;
 }
 
 .hide-display {
