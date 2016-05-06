@@ -24,8 +24,9 @@
         pageLeft = splitlayout.querySelector('div.page-left'),
         pageRight = splitlayout.querySelector('div.page-right'),
         menuRight = document.getElementById('cbp-spmenu-s2'),
-        closeMenu = document.getElementById('close-menu-button'),
+        // closeMenu = document.getElementById('close-menu-button'),
         displayHeader = document.getElementById("main-page-header-display"),
+        right = document.getElementById("showRight"),
         eventtype = mobilecheck() ? 'touchstart' : 'click',
         transEndEventNames = {
             'WebkitTransition': 'webkitTransitionEnd',
@@ -50,11 +51,9 @@
             reset();
             classie.add(splitlayout, 'open-right');
         });
-        closeMenu.addEventListener(eventtype, function() {
-            reset();
-        });
-        // back to intro
-        // after transition ends:
+        // closeMenu.addEventListener(eventtype, function() {
+        //     reset();
+        // });
         var onEndTransFn = function() {
                 this.removeEventListener(transEndEventName, onEndTransFn);
                 classie.add(splitlayout, 'reset-layout');
@@ -80,6 +79,8 @@
         classie.remove(splitlayout, 'reset-layout');
         classie.remove(menuRight, 'cbp-spmenu-open');
         classie.remove(displayHeader, "hide-display");
+        classie.remove(right,"active");
+        classie.remove(right,"open");
     }
     init();
 })();
@@ -101,15 +102,17 @@
 (function menuControl() {
     var menuRight = document.getElementById('cbp-spmenu-s2'),
         showRight = document.getElementById('showRight'),
-        footerRight = document.getElementById('page-footer-right');
-    footerLeft = document.getElementById('page-footer-left');
+        footerRight = document.getElementById('page-footer-right'),
+        footerLeft = document.getElementById('page-footer-left');
     showRight.addEventListener("click", handleMenuViewOperation);
     footerLeft.addEventListener("click", handleMenuViewOperation);
     footerRight.addEventListener("click", handleMenuViewOperation);
 
     function handleMenuViewOperation() {
-        classie.toggle(this, 'active');
+        classie.toggle(showRight, 'active');
+        classie.toggle(showRight, 'open');
         classie.toggle(menuRight, 'cbp-spmenu-open');
+
     }
 
     function openMenu() {
@@ -123,4 +126,25 @@
     function updateTimer(ts) {
         cd.innerText = ts.months + " months, " + ts.days + " days until we are Mr. & Mrs.";
     }
+})();
+(function() {
+    var locationMenuButton = document.getElementById("location-menu-button");
+    locationMenuButton.addEventListener("click", handleLocationButtonClick);
+
+    function handleLocationButtonClick(e) {
+        e.preventDefault();
+        var me = this;
+        swal({
+            title: "Heidel House Resort & Spa",
+            text: "Booking a room? Be sure to mention you're with the Sutton/Uhan wedding!",
+            type: "success",
+            showCancelButton: true,
+            confirmButtonColor: "#47a3da",
+            confirmButtonText: "Go to Heidel House website",
+            closeOnConfirm: true
+        }, function() {
+            window.open(me.href, '_blank');
+        });
+    }
+
 })();
